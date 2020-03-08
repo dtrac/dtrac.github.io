@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Dan Tracey">
+    <meta name="description" content="Dan Tracey&#39;s personal website">
+    <meta name="keywords" content="blog,engineer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Error: &#34;features&#34;: required field is not set"/>
+<meta name="twitter:description" content="Terraform - &ldquo;Error: &ldquo;features&rdquo;: required field is not set&rdquo; Issue: Something I came across time and time again when working through the MS Learn Course Automate your deployments with Azure DevOps was the following error in my Azure DevOps build pipelines:
+&#34;Error: &#34;features&#34;: required field is not set&#34; ## Steps to reproduce:
+Create a basic terraform configuration using terraform 0.12 or later and AzureRM provider version 2.0 or later. E.g:"/>
+
+    <meta property="og:title" content="Error: &#34;features&#34;: required field is not set" />
+<meta property="og:description" content="Terraform - &ldquo;Error: &ldquo;features&rdquo;: required field is not set&rdquo; Issue: Something I came across time and time again when working through the MS Learn Course Automate your deployments with Azure DevOps was the following error in my Azure DevOps build pipelines:
+&#34;Error: &#34;features&#34;: required field is not set&#34; ## Steps to reproduce:
+Create a basic terraform configuration using terraform 0.12 or later and AzureRM provider version 2.0 or later. E.g:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dtrac.github.io/terraform/error-features-required-field-is-not-set/" />
+<meta property="article:published_time" content="2020-03-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-07T00:00:00+00:00" />
+
+
+    
+      <base href="https://dtrac.github.io/terraform/error-features-required-field-is-not-set/">
+    
+    <title>
+  Error: &#34;features&#34;: required field is not set · Dan&#39;s Blog Site
+</title>
+
+    
+      <link rel="canonical" href="https://dtrac.github.io/terraform/error-features-required-field-is-not-set/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://dtrac.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://dtrac.github.io/css/custom.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://dtrac.github.io/images/favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://dtrac.github.io/images/favicon.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.65.3" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://dtrac.github.io/">
+      Dan&#39;s Blog Site
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://dtrac.github.io/about/">about</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Error: &#34;features&#34;: required field is not set</h1>
+    </header>
+
+    <h3 id="terraform---error-features-required-field-is-not-set">Terraform - <strong>&ldquo;Error: &ldquo;features&rdquo;: required field is not set&rdquo;</strong></h3>
+<h2 id="issue">Issue:</h2>
+<p>Something I came across time and time again when working through the MS Learn Course <a href="https://docs.microsoft.com/en-us/learn/paths/automate-deployments-azure-devops/">Automate your deployments with Azure DevOps</a> was the following error in my Azure DevOps build pipelines:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="font-style:italic">&#34;Error: &#34;features&#34;: required field is not set&#34;</span>
+</code></pre></div><p><img src="https://dtrac.github.io/images/terraform-error-features-required-not-set.png" alt="Error Message"></p>
+<p>## Steps to reproduce:</p>
+<p>Create a basic terraform configuration using terraform 0.12 or later and AzureRM provider version 2.0 or later.  E.g:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="font-style:italic"># Configure the terraform block
+</span><span style="font-style:italic"></span><span style="">terraform</span> {
+  required_version = <span style="font-style:italic">&#34;&gt; 0.12.0&#34;</span>
+}<span style="font-style:italic">
+</span><span style="font-style:italic">
+</span><span style="font-style:italic"># Configure the Azure Provider
+</span><span style="font-style:italic"></span><span style="font-weight:bold">provider</span> <span style="font-style:italic">&#34;azurerm&#34;</span> {
+  version = &#34;&gt;=2.0.0<span style="">&#34;</span>
+}<span style="font-style:italic">
+</span><span style="font-style:italic">
+</span><span style="font-style:italic"># Create a new resource group
+</span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;azurerm_resource_group&#34; &#34;rg&#34;</span> {
+  name     = <span style="font-style:italic">&#34;myTFResourceGroup&#34;</span>
+  location = <span style="font-style:italic">&#34;uksouth&#34;</span>
+
+  tags = {
+    environment = <span style="font-style:italic">&#34;TF sandbox&#34;</span>
+  }
+}
+</code></pre></div><p>and run:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="">terraform</span> <span style="">plan</span>
+</code></pre></div><h3 id="resolution">Resolution:</h3>
+<p>Add an empty features block to the provider block in your root module:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="font-weight:bold">provider</span> <span style="font-style:italic">&#34;azurerm&#34;</span> {
+  version = &#34;&gt;=2.0.0<span style="">&#34;</span>
+  <span style="">features</span> {}
+}
+
+</code></pre></div><h3 id="further-details">Further details:</h3>
+<p>As of AzureRM Provider 2.0.0 - (February 24, 2020):</p>
+<p>&ldquo;Provider Block: The Azure Provider now requires that a features block is specified within the Provider block, which can be used to alter the behaviour of certain resources - more information on the features block can be found in the <a href="https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md#200-february-24-2020">documentation</a>&quot;.</p>
+<p>&ldquo;features - (Required) A features block as defined below which can be used to customize the behaviour of certain Azure Provider resources.&rdquo;</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Automator of Azure-y and Windows-ish stuff - using PowerShell, DSC, Packer, Vagrant, Ansible, Terraform, ARM Templates, the vRealize Suite and whatever else comes to hand.</p>
+    
+    
+      
+        © 2020
+      
+       Dan Tracey 
+    
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dtrac.github.io/categories/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dtrac.github.io/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dtrac.github.io/terraform/error-features-required-field-is-not-set/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dtrac.github.io/categories/terraform/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dtrac.github.io/terraform/</loc>
+    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dtrac.github.io/about/</loc>
   </url>
   
@@ -11,19 +36,7 @@
   </url>
   
   <url>
-    <loc>https://dtrac.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/</loc>
-  </url>
-  
-  <url>
     <loc>https://dtrac.github.io/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/terraform/</loc>
   </url>
   
 </urlset>

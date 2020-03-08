@@ -6,9 +6,21 @@
     <description>Recent content on Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dtrac.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Error: &#34;features&#34;: required field is not set</title>
+      <link>https://dtrac.github.io/terraform/error-features-required-field-is-not-set/</link>
+      <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dtrac.github.io/terraform/error-features-required-field-is-not-set/</guid>
+      <description>Terraform - &amp;ldquo;Error: &amp;ldquo;features&amp;rdquo;: required field is not set&amp;rdquo; Issue: Something I came across time and time again when working through the MS Learn Course Automate your deployments with Azure DevOps was the following error in my Azure DevOps build pipelines:
+&amp;#34;Error: &amp;#34;features&amp;#34;: required field is not set&amp;#34; ## Steps to reproduce:
+Create a basic terraform configuration using terraform 0.12 or later and AzureRM provider version 2.0 or later. E.g:</description>
+    </item>
     
     <item>
       <title>about</title>

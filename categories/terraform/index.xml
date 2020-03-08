@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>terraform on Dan&#39;s Blog Site</title>
-    <link>https://dtrac.github.io/terraform/</link>
+    <link>https://dtrac.github.io/categories/terraform/</link>
     <description>Recent content in terraform on Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://dtrac.github.io/terraform/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dtrac.github.io/categories/terraform/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
