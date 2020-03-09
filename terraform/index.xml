@@ -6,10 +6,19 @@
     <description>Recent content in terraform on Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dtrac.github.io/terraform/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Terraform vs ARM Templates</title>
+      <link>https://dtrac.github.io/terraform/terraform-vs-arm-templates/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dtrac.github.io/terraform/terraform-vs-arm-templates/</guid>
+      <description>Terraform vs ARM Templates    Terraform ARM Templates     HCL (2.0 in &amp;gt;v0.12) JSON   Variables Parameters   Local values Variables   Resources Resources   Functions Functions   Modules Nested / Linked Templates   Automatic depencies (via graph) Explicit dependencies   Reference by resource name (or data source) Refer by reference or resourceId    </description>
+    </item>
     
     <item>
       <title>Error: &#34;features&#34;: required field is not set</title>
