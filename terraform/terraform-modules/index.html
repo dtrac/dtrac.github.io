@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Dan Tracey">
+    <meta name="description" content="Dan Tracey&#39;s personal website">
+    <meta name="keywords" content="blog,engineer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Terraform Modules"/>
+<meta name="twitter:description" content="Terraform Modules Author: Dan Tracey
+Last Updated: 07/03/2020
+ Context This pattern describes the high level approach to creating Terraform Modules.
+A smooth process for this is absolutely key to enabling Continuous Delivery - a goal for all teams operating on JLDP. Adopting continuous delivery practices helps to ensure:
+ Software is always deployable throughout its life Feedback is faster We are able to easily fix forward or rollback  Solution Pattern Docker itself provides a wrapper for container management operations - specifically commands to build, push and pull from a registry."/>
+
+    <meta property="og:title" content="Terraform Modules" />
+<meta property="og:description" content="Terraform Modules Author: Dan Tracey
+Last Updated: 07/03/2020
+ Context This pattern describes the high level approach to creating Terraform Modules.
+A smooth process for this is absolutely key to enabling Continuous Delivery - a goal for all teams operating on JLDP. Adopting continuous delivery practices helps to ensure:
+ Software is always deployable throughout its life Feedback is faster We are able to easily fix forward or rollback  Solution Pattern Docker itself provides a wrapper for container management operations - specifically commands to build, push and pull from a registry." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dtrac.github.io/terraform/terraform-modules/" />
+
+
+
+    
+      <base href="https://dtrac.github.io/terraform/terraform-modules/">
+    
+    <title>
+  Terraform Modules · Dan&#39;s Blog Site
+</title>
+
+    
+      <link rel="canonical" href="https://dtrac.github.io/terraform/terraform-modules/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://dtrac.github.io/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="https://dtrac.github.io/css/custom.css" />
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://dtrac.github.io/images/favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://dtrac.github.io/images/favicon.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.75.1" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://dtrac.github.io/">
+      Dan&#39;s Blog Site
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://dtrac.github.io/about/">about</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://dtrac.github.io/azure/">azure</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://dtrac.github.io/terraform/">terraform</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Terraform Modules</h1>
+    </header>
+
+    <h2 id="terraform-modules">Terraform Modules</h2>
+<p><strong>Author:</strong> Dan Tracey</p>
+<p><strong>Last Updated:</strong> 07/03/2020</p>
+<hr>
+<h3 id="context">Context</h3>
+<p>This pattern describes the high level approach to creating Terraform Modules.</p>
+<p>A smooth process for this is absolutely key to enabling Continuous Delivery - a goal for all teams operating on JLDP. Adopting continuous delivery practices helps to ensure:</p>
+<ul>
+<li>Software is always deployable throughout its life</li>
+<li>Feedback is faster</li>
+<li>We are able to easily fix forward or rollback</li>
+</ul>
+<h3 id="solution-pattern">Solution Pattern</h3>
+<p><img src="https://dtrac.github.io/images/CTP15-Software-Build-and-Deploy.png" alt="Software Build & Deploy"></p>
+<p><strong>Docker</strong> itself provides a wrapper for container management operations - specifically commands to <code>build</code>, <code>push</code> and <code>pull</code> from a registry. In the majority of cases on JLDP, these native commands are the ones that are used, although there are tools out there that can abstract this even further.</p>
+<p>For JLDP, we use <a href="https://cloud.google.com/container-registry/">Google Container Registry</a> (GCR) as the <strong>registry</strong> to store our built images. A single, separate GCP Project with GCR enabled (<code>jl-container-images</code>) is used for all images across all environments on JLDP - build once, deploy many. Use of this registry will soon be mandatory for <em>all</em> workloads deploying onto the platform. This, amongst other things, helps us ensure that appropriate security scanning tools are able to run on anything we run.</p>
+<blockquote>
+<p>Gitlab has its own Container Registry, which is a sensible place to store images used within CI pipelines themselves - for example storing the Docker image you want to actually <!-- raw HTML omitted -->use<!-- raw HTML omitted --> to build the Docker image you want to run on JLDP</p>
+</blockquote>
+<p>For <strong>Continuous Integration / Continuous Deployment tooling</strong>, we use <a href="https://about.gitlab.com/product/continuous-integration/">Gitlab CI</a> for our pipelines. This represents a move away from <a href="https://www.gocd.org/">GoCD</a>, which is still used for JLDP v1 (it was inherited as the CI tool of choice for the original on-premises 1JL build &amp; deploy). How Gitlab CI works is elaborated on <a href="#gitlab-ci">below</a>.</p>
+<p>In order to scale to meet the needs of the teams on JLDP, we also run a set of dedicated Gitlab Runners - any repositories within the top-level <code>digital</code> group in the JLP Gitlab environment has access to these Runners as an alternative to the shared runners we get through our contract with Gitlab. For JLDP workloads we recommend using these as: a) they autoscale to meet demand, rather than being restricted and shared amongst all users of the JLP Gitlab account, and b) can be adapted by JLDP to work optimally and reliably for our platform.</p>
+<blockquote>
+<p>When we move to gitlab.com from our dedicated githost.io service, this advice will still hold true. Rather than being restricted to a number of runners, on gitlab.com we will be restricted by number of build minutes - so using our own will still be desirable</p>
+</blockquote>
+<p>The Runners are created as a set of Google Compute Engine instances by <code>gitlab-runner</code> pods running in the Flex Kubernetes cluster. We spawn a separate higher-spec runner with a fixed IP range for E2E load testing too.</p>
+<h4 id="base-images">Base Images</h4>
+<p>We have also begun to offer a set of base images for teams to build upon. The earliest examples were for nginx and Cloud Endpoint&rsquo;s sidecar proxy, where we introduced hardening improvements and telemetry to the standard open source offerings.</p>
+<p>Over time, we will be extending out our base images to include ones we feel are a suitable starting point - especially from a security perspective. Teams can expect that using these as they are released will make it easier to avoid vulnerability alerts (and in the future failed pipeline builds). A Distroless JVM-based base image is the first example of these which we have released recently.</p>
+<p>Docker&rsquo;s multi-stage build approach allows suitable layering of additional capabilities on top where the base image does not cover things fully.</p>
+<h4 id="gitlab-ci">Gitlab CI</h4>
+<p>Gitlab CI is a managed CI capability that we are free to use as part of our Gitlab subscription. Given Gitlab is the standard version control system across JL Digital, this is a convenient option (see <a href="https://dtrac.github.io/decisions/adr028-ci-tooling/">ADR028</a>). We have so far not found a need to look at more fully-featured CI tools in the year or so that JLDP v2 has been in operation.</p>
+<p>CI pipelines are bounded around a repository in the Gitlab CI model. A specific <code>.yaml</code> file is created at the root of the repo with instructions on what stages to run in the pipeline. Reasonably complex pipelines can be created as needed, although the more traditional variants of build/test/deploy is typical.</p>
+<p>Stages in the CI are given an <code>image:</code> attribute which indicates the Docker image to use to execute the job. Gitlab CI pulls this image (either from Gitlab&rsquo;s own registry or elsewhere, as required), checks out the repository onto that image and executes the instructions as specified (e.g. through a shell script).</p>
+<p>Using a Docker image in this way provides a tremendous amount of flexibility in what you can do within the job.</p>
+<p>Environment variables can be fed in either directly in the .yaml or through CI/CD variables (which provides a means of handling things securely, as permissions to view these variables can be restricted - although the permissions model is hierarchical). Likewise, artifacts can be passed between stages in the pipeline where applicable too.</p>
+<h4 id="platform-specific-considerations">Platform-Specific Considerations</h4>
+<p>In general, whilst the languages being used may differ, the JLDP teams aspire to use the same techniques and tools for their own workloads deploying onto JLDP as Product Teams working with JL services. We write a number of our own services where a ready-made option is not available natively or through open source solutions.</p>
+<p>By &ldquo;eating our own dog food&rdquo; we also benefit from early feedback on issues with our solution and in spotting ideas for improvement.</p>
+<p><img src="https://dtrac.github.io/images/CTP15-Platform-Provisioning.png" alt="Platform Provisioning"></p>
+<p>As well as the software deployment chain, we also have platform provisioning tool chains that take care of the following:</p>
+<ul>
+<li>Provisioning of the Kubernetes platform itself</li>
+<li>Creation of &ldquo;tenants&rdquo; in Kubernetes - including their permissions and platform services that teams need (such as the ingress-controller and stackdriver-exporter)</li>
+<li>Enablement and where applicable provisioning of GCP services for tenants in their own GCP Projects
+<ul>
+<li>We refer to this as bringing into the &ldquo;platform boundary&rdquo;, by implementing a <a href="https://medium.com/netflix-techblog/how-we-build-code-at-netflix-c5d9bd727f15">paved road</a></li>
+<li>We are increasingly bringing this provisioning under the control of JLDP so that teams do not need to develop this capability themselves, unless they have a particular need that is not covered by our processes</li>
+</ul>
+</li>
+<li>Base Image creation and publishing</li>
+</ul>
+<p>We rely heavily on <a href="https://terraform.io">Terraform</a> to do much of this. Terraform is a declarative &ldquo;Infrastructure-as-Code&rdquo; configuration management tool. It is open source and there is usually very quick uptake on new GCP services within its modules (because it is easy for Google&rsquo;s own engineers to extend the GCP provider - something they clearly invest a lot in!).</p>
+<hr>
+<h3 id="rationale">Rationale</h3>
+<p>The decision to use Gitlab CI is covered by <a href="https://dtrac.github.io/decisions/adr022-cicd-approach/">ADR022</a>. The choice was strongly motivated by a principle that <strong>individual Product Teams should be responsible for their own build &amp; deployment</strong>. Whilst it is right that JLDP should provide tools and blueprints to support teams doing this well, Product Teams know their services best and are accountable for their services' behaviour.</p>
+<blockquote>
+<p>Tangentially, this approach also allows us to more efficiently scale out to multiple teams - a central team being responsible for CI is well-known to very easily become a bottleneck for deployment frequency</p>
+</blockquote>
+<hr>
+<h3 id="implications">Implications</h3>
+<p>Teams must be acutely aware of their responsibilities here - including making sure that their CI is transitioned to Ops appropriately if they are choosing not to support their services themselves (in general, we strongly advocate a &ldquo;build it, run it&rdquo; approach on JLDP).</p>
+<p>Moving between CI tools is a reasonably painful experience - we are therefore somewhat beholden to Gitlab for the time-being. Any migration to alternate tooling will likely prioritise a CI model that can utilise Docker as the runtime for jobs, as this is the model that Gitlab uses exclusively.</p>
+<p>We are aware that other CI tooling out there offers additional features beyond the capabilities of Gitlab CI. However, we have yet to see teams specifically asking for any of these and therefore have not investigated further. There are examples of some teams doing quite sophisticated things through Gitlab CI - including JLDP themselves through the <a href="https://dtrac.github.io/patterns/paved-road-pipeline/">Paved Road Pipeline</a>.</p>
+<hr>
+<h3 id="example-use-cases">Example Use-Cases</h3>
+<p>This approach is used throughout JLDP. Here are a couple of screenshots from Gitlab CI to illustrate.</p>
+<p>A list of Gitlab CI Pipeline executions (taken from one of <code>search</code> microservices):</p>
+<p><img src="https://dtrac.github.io/images/CTP15-Gitlab-CI-List.png" alt="Gitlab CI List"></p>
+<p>A Gitlab CI Pipeline (taken from the <code>platform</code> tenant creation/management - one of our most complicated ones):</p>
+<p><img src="https://dtrac.github.io/images/CTP15-Gitlab-CI-Pipeline.png" alt="Gitlab CI Pipeline"></p>
+<p>A typical stage in a Gitlab CI pipeline may look like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="font-weight:bold">build</span>:
+  <span style="font-weight:bold">image</span>: ${DOCKER_IMAGE_PATH}/gradle-git-docker
+  <span style="font-weight:bold">services</span>:
+    - docker:19.03.0-dind
+  <span style="font-weight:bold">stage</span>: build
+  <span style="font-weight:bold">variables</span>:
+    <span style="font-weight:bold">ENV_NAME</span>: <span style="font-style:italic">&#34;build&#34;</span>
+    <span style="font-weight:bold">ZONE</span>: <span style="font-style:italic">&#34;europe-west1-b&#34;</span>
+    <span style="font-weight:bold">GCP_GCR_PROJECT</span>: jl-container-images
+    <span style="font-weight:bold">GCP_RESOURCE_PROJECT</span>: jl-product-search-flex
+    <span style="font-weight:bold">CI_KEY_FILE</span>: secrets/product-search-flex-ci.json
+    <span style="font-weight:bold">APP_NAME</span>: product-listing
+    <span style="font-weight:bold">GIT_COMMIT</span>: $CI_COMMIT_SHA
+    <span style="font-weight:bold">DOCKER_DRIVER</span>: overlay2
+    <span style="font-weight:bold">DOCKER_TLS_CERTDIR</span>: <span style="font-style:italic">&#34;&#34;</span>
+    <span style="font-weight:bold">DOCKER_HOST</span>: tcp://docker:2375
+    <span style="font-weight:bold">VERSION</span>: $CI_PIPELINE_ID
+    <span style="font-weight:bold">DATASTORE_PROJECT_ID</span>: $GCP_RESOURCE_PROJECT
+  <span style="font-weight:bold">&lt;&lt;</span>: <span style="">*whitelist</span>
+  <span style="font-weight:bold">&lt;&lt;</span>: <span style="">*retry-on-failure</span>
+  <span style="font-weight:bold">script</span>:
+    - echo $PRODUCT_SEARCH_FLEX_CI &gt; $CI_KEY_FILE
+    - ./gradlew app:build --info --profile
+    - ./package-no-gcloud.sh
+  <span style="font-weight:bold">artifacts</span>:
+    <span style="font-weight:bold">when</span>: always
+    <span style="font-weight:bold">paths</span>:
+      - versions.txt
+      - app/build/reports/tests/test/
+</code></pre></div><p>Note the inclusion of a base image to execute (<code>gradle-git-docker</code>) which has the tools that this <code>build</code> stage requires to build the Java code (gradle) from source control (git) and bake &amp; push the image (docker), executed through a pair of shell scripts (<code>gradlew</code> and <code>package-no-gcloud.sh</code>).</p>
+<p>Environment variables are fed in from elsewhere in the gitlab-ci config or CI/CD variables set against the repo/group itself, and artifacts passed down to the next stage (in this case a deploy to <code>stubs</code> for test execution).</p>
+<p>This model for a pipeline stage is very typical.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Automator of Azure-y and Windows-ish stuff - using PowerShell, DSC, Packer, Vagrant, Ansible, Terraform, ARM Templates, the vRealize Suite and whatever else comes to hand.</p>
+    
+    
+      
+        © 2022
+      
+       Dan Tracey 
+    
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+    
+
+  </body>
+
+</html>

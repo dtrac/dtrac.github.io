@@ -6,11 +6,7 @@
     <description>Recent content on Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://dtrac.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dtrac.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform vs ARM Templates</title>
       <link>https://dtrac.github.io/terraform/terraform-vs-arm-templates/</link>
@@ -39,6 +35,19 @@ Create a basic terraform configuration using terraform 0.12 or later and AzureRM
       <guid>https://dtrac.github.io/about/</guid>
       <description>This is a personal blog about cloud engineering and automation (mostly Azure related) maintained by me, Dan Tracey.
 I&amp;rsquo;m a senior platform engineer with over 15 years’ experience in public and private cloud and software-defined datacenter consultancy on Windows, Linux and VMware infrastructure, including automation, orchestration, design, implementation, migration and support. Experience of working in both the private and public sector within Managed Services, Retail, Defence, Home Affairs, Space, Local Government and the NHS.</description>
+    </item>
+    
+    <item>
+      <title>Terraform Modules</title>
+      <link>https://dtrac.github.io/terraform/terraform-modules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dtrac.github.io/terraform/terraform-modules/</guid>
+      <description>Terraform Modules Author: Dan Tracey
+Last Updated: 07/03/2020
+ Context This pattern describes the high level approach to creating Terraform Modules.
+A smooth process for this is absolutely key to enabling Continuous Delivery - a goal for all teams operating on JLDP. Adopting continuous delivery practices helps to ensure:
+ Software is always deployable throughout its life Feedback is faster We are able to easily fix forward or rollback  Solution Pattern Docker itself provides a wrapper for container management operations - specifically commands to build, push and pull from a registry.</description>
     </item>
     
   </channel>

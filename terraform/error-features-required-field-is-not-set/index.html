@@ -61,7 +61,7 @@ Create a basic terraform configuration using terraform 0.12 or later and AzureRM
     <link rel="icon" type="image/png" href="https://dtrac.github.io/images/favicon.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://dtrac.github.io/images/favicon.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.65.3" />
+    <meta name="generator" content="Hugo 0.75.1" />
   </head>
 
   
@@ -110,22 +110,22 @@ Create a basic terraform configuration using terraform 0.12 or later and AzureRM
     <h3 id="terraform---error-features-required-field-is-not-set">Terraform - <strong>&ldquo;Error: &ldquo;features&rdquo;: required field is not set&rdquo;</strong></h3>
 <h2 id="issue">Issue:</h2>
 <p>Something I came across time and time again when working through the MS Learn Course <a href="https://docs.microsoft.com/en-us/learn/paths/automate-deployments-azure-devops/">Automate your deployments with Azure DevOps</a> was the following error in my Azure DevOps build pipelines:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="font-style:italic">&#34;Error: &#34;features&#34;: required field is not set&#34;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="font-style:italic">&#34;Error: &#34;</span>features<span style="font-style:italic">&#34;: required field is not set&#34;</span>
 </code></pre></div><p><img src="https://dtrac.github.io/images/terraform-error-features-required-not-set.png" alt="Error Message"></p>
 <p>## Steps to reproduce:</p>
 <p>Create a basic terraform configuration using terraform 0.12 or later and AzureRM provider version 2.0 or later.  E.g:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="font-style:italic"># Configure the terraform block
-</span><span style="font-style:italic"></span><span style="">terraform</span> {
+</span><span style="font-style:italic"></span>terraform {
   required_version = <span style="font-style:italic">&#34;&gt; 0.12.0&#34;</span>
 }<span style="font-style:italic">
 </span><span style="font-style:italic">
 </span><span style="font-style:italic"># Configure the Azure Provider
 </span><span style="font-style:italic"></span><span style="font-weight:bold">provider</span> <span style="font-style:italic">&#34;azurerm&#34;</span> {
-  version = &#34;&gt;=2.0.0<span style="">&#34;</span>
+  version = <span style="font-style:italic">&#34;&gt;=2.0.0&#34;</span>
 }<span style="font-style:italic">
 </span><span style="font-style:italic">
 </span><span style="font-style:italic"># Create a new resource group
-</span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;azurerm_resource_group&#34; &#34;rg&#34;</span> {
+</span><span style="font-style:italic"></span><span style="font-weight:bold">resource</span> <span style="font-style:italic">&#34;azurerm_resource_group&#34;</span> <span style="font-style:italic">&#34;rg&#34;</span> {
   name     = <span style="font-style:italic">&#34;myTFResourceGroup&#34;</span>
   location = <span style="font-style:italic">&#34;uksouth&#34;</span>
 
@@ -134,17 +134,17 @@ Create a basic terraform configuration using terraform 0.12 or later and AzureRM
   }
 }
 </code></pre></div><p>and run:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="">terraform</span> <span style="">plan</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform">terraform plan
 </code></pre></div><h3 id="resolution">Resolution:</h3>
 <p>Add an empty features block to the provider block in your root module:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="font-weight:bold">provider</span> <span style="font-style:italic">&#34;azurerm&#34;</span> {
-  version = &#34;&gt;=2.0.0<span style="">&#34;</span>
-  <span style="">features</span> {}
+  version = <span style="font-style:italic">&#34;&gt;=2.0.0&#34;</span>
+  features {}
 }
 
 </code></pre></div><h3 id="further-details">Further details:</h3>
 <p>As of AzureRM Provider 2.0.0 - (February 24, 2020):</p>
-<p>&ldquo;Provider Block: The Azure Provider now requires that a features block is specified within the Provider block, which can be used to alter the behaviour of certain resources - more information on the features block can be found in the <a href="https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md#200-february-24-2020">documentation</a>&quot;.</p>
+<p>&ldquo;Provider Block: The Azure Provider now requires that a features block is specified within the Provider block, which can be used to alter the behaviour of certain resources - more information on the features block can be found in the <a href="https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md#200-february-24-2020">documentation</a>&rdquo;.</p>
 <p>&ldquo;features - (Required) A features block as defined below which can be used to customize the behaviour of certain Azure Provider resources.&rdquo;</p>
 
   </article>
@@ -160,7 +160,7 @@ Create a basic terraform configuration using terraform 0.12 or later and AzureRM
     
     
       
-        © 2020
+        © 2022
       
        Dan Tracey 
     

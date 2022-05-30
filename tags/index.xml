@@ -5,10 +5,6 @@
     <link>https://dtrac.github.io/tags/</link>
     <description>Recent content in Tags on Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    
-	<atom:link href="https://dtrac.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language><atom:link href="https://dtrac.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -49,4 +49,8 @@
     <loc>https://dtrac.github.io/tags/</loc>
   </url>
   
+  <url>
+    <loc>https://dtrac.github.io/terraform/terraform-modules/</loc>
+  </url>
+  
 </urlset>
