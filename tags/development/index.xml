@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>development on Welcome to Dan&#39;s Blog Site</title>
+    <link>https://dtrac.github.io/tags/development/</link>
+    <description>Recent content in development on Welcome to Dan&#39;s Blog Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 04 Mar 2023 20:34:12 +0000</lastBuildDate><atom:link href="https://dtrac.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>using mermaid diagrams in hugo</title>
+      <link>https://dtrac.github.io/posts/testing-mermaid-in-hugo/</link>
+      <pubDate>Sat, 04 Mar 2023 20:34:12 +0000</pubDate>
+      
+      <guid>https://dtrac.github.io/posts/testing-mermaid-in-hugo/</guid>
+      <description>Anyone that knows me, knows that my memory can be&amp;hellip;.sub-optimal. Therefore a key part of studying for my upcoming Microsoft Certified Cybersecurity Architect Expert exam, was to create a mindmap of the subject matter.
+I&amp;rsquo;d heard good things about the Mermaid Diagramming and charting tool, which renders markdown to create and modify diagrams dynamically. As I have chosen to use the Hugo framework for my blog site (which also leverages the power of markdown&amp;hellip;), the two seemed a good fit.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  using mermaid diagrams in hugo · Welcome to Dan&#39;s Blog Site
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dan Tracey">
+<meta name="description" content="Anyone that knows me, knows that my memory can be&hellip;.sub-optimal. Therefore a key part of studying for my upcoming Microsoft Certified Cybersecurity Architect Expert exam, was to create a mindmap of the subject matter.
+I&rsquo;d heard good things about the Mermaid Diagramming and charting tool, which renders markdown to create and modify diagrams dynamically. As I have chosen to use the Hugo framework for my blog site (which also leverages the power of markdown&hellip;), the two seemed a good fit.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="using mermaid diagrams in hugo"/>
+<meta name="twitter:description" content="Anyone that knows me, knows that my memory can be&hellip;.sub-optimal. Therefore a key part of studying for my upcoming Microsoft Certified Cybersecurity Architect Expert exam, was to create a mindmap of the subject matter.
+I&rsquo;d heard good things about the Mermaid Diagramming and charting tool, which renders markdown to create and modify diagrams dynamically. As I have chosen to use the Hugo framework for my blog site (which also leverages the power of markdown&hellip;), the two seemed a good fit."/>
+
+<meta property="og:title" content="using mermaid diagrams in hugo" />
+<meta property="og:description" content="Anyone that knows me, knows that my memory can be&hellip;.sub-optimal. Therefore a key part of studying for my upcoming Microsoft Certified Cybersecurity Architect Expert exam, was to create a mindmap of the subject matter.
+I&rsquo;d heard good things about the Mermaid Diagramming and charting tool, which renders markdown to create and modify diagrams dynamically. As I have chosen to use the Hugo framework for my blog site (which also leverages the power of markdown&hellip;), the two seemed a good fit." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dtrac.github.io/posts/testing-mermaid-in-hugo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-04T20:34:12+00:00" />
+<meta property="article:modified_time" content="2023-03-04T20:34:12+00:00" />
+
+
+
+
+<link rel="canonical" href="https://dtrac.github.io/posts/testing-mermaid-in-hugo/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.01bd429dda63a16d76996eaf0b8da061429b76e714515cb1b246aac7fe7f4b2a.css" integrity="sha256-Ab1CndpjoW12mW6vC42gYUKbducUUVyxskaqx/5/Syo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.111.1">
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Welcome to Dan&#39;s Blog Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">about</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">blog</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://dtrac.github.io/posts/testing-mermaid-in-hugo/">
+              using mermaid diagrams in hugo
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-03-04T20:34:12Z">
+                March 4, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/web-development/">web development</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/web/">web</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/development/">development</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hugo/">hugo</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/mermaid/">mermaid</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Anyone that knows me, knows that my memory can be&hellip;.sub-optimal.  Therefore a key part of studying for my upcoming <a href="https://learn.microsoft.com/en-us/certifications/cybersecurity-architect-expert/">Microsoft Certified Cybersecurity Architect Expert</a> exam, was to create a mindmap of the subject matter.</p>
+<p>I&rsquo;d heard good things about the <a href="https://mermaid.js.org/">Mermaid</a> Diagramming and charting tool, which renders markdown to create and modify diagrams dynamically.   As I have chosen to use the <a href="https://gohugo.io/">Hugo</a> framework for my blog site (which also leverages the power of markdown&hellip;), the two seemed a good fit.</p>
+<p>To get things rolling I first had to install the Mermaid library into my site&rsquo;s theme layout <strong>themes/hugo-coder/layouts/partials/head.html</strong> file:</p>
+<pre><code>    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;mermaid.initialize({startOnLoad:true});&lt;/script&gt;
+</code></pre>
+<p>&hellip;This then allows me to use the {{ mermaid ]} shortcode to add diagrams in Mermaid syntax and have them rendered directly within blog posts.</p>
+<p>Which means, that code like this:</p>
+<pre><code>    mindmap
+    root((Azure SC-100 Exam Objectives))
+        Design a Zero Trust strategy and architecture
+        Evaluate Governance Risk Compliance technical strategies and security operations strategies
+        Design security for infrastructure
+        Design a strategy for data and applications
+        Recommend security best practices and priorities 
+</code></pre>
+<p>&hellip;makes lovely mindmap diagrams like this:</p>
+<div class="mermaid">
+mindmap
+  root((Azure SC-100 Exam Objectives))
+    Design a Zero Trust strategy and architecture
+    Evaluate Governance Risk Compliance technical strategies and security operations strategies
+    Design security for infrastructure
+    Design a strategy for data and applications
+    Recommend security best practices and priorities 
+
+</div>
+
+<p>It&rsquo;s a start.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Dan Tracey 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js" integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin="anonymous"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
