@@ -1,53 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dan&#39;s Blog Site</title>
+    <title>Welcome to Dan&#39;s Blog Site</title>
     <link>https://dtrac.github.io/</link>
-    <description>Recent content on Dan&#39;s Blog Site</description>
+    <description>Recent content on Welcome to Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dtrac.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Terraform vs ARM Templates</title>
-      <link>https://dtrac.github.io/terraform/terraform-vs-arm-templates/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dtrac.github.io/terraform/terraform-vs-arm-templates/</guid>
-      <description>Terraform vs ARM Templates    Terraform ARM Templates     HCL (2.0 in &amp;gt;v0.12) JSON   Variables Parameters   Local values Variables   Resources Resources   Functions Functions   Modules Nested / Linked Templates   Automatic depencies (via graph) Explicit dependencies   Reference by resource name (or data source) Refer by reference or resourceId    </description>
-    </item>
-    
-    <item>
-      <title>Error: &#34;features&#34;: required field is not set</title>
-      <link>https://dtrac.github.io/terraform/error-features-required-field-is-not-set/</link>
-      <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dtrac.github.io/terraform/error-features-required-field-is-not-set/</guid>
-      <description>Terraform - &amp;ldquo;Error: &amp;ldquo;features&amp;rdquo;: required field is not set&amp;rdquo; Issue: Something I came across time and time again when working through the MS Learn Course Automate your deployments with Azure DevOps was the following error in my Azure DevOps build pipelines:
-&amp;#34;Error: &amp;#34;features&amp;#34;: required field is not set&amp;#34; ## Steps to reproduce:
-Create a basic terraform configuration using terraform 0.12 or later and AzureRM provider version 2.0 or later. E.g:</description>
-    </item>
-    
+    <language>en</language><atom:link href="https://dtrac.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
       <link>https://dtrac.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Mar 2023 16:36:47 +0000</pubDate>
       
       <guid>https://dtrac.github.io/about/</guid>
       <description>This is a personal blog about cloud engineering and automation (mostly Azure related) maintained by me, Dan Tracey.
-I&amp;rsquo;m a senior platform engineer with over 15 years’ experience in public and private cloud and software-defined datacenter consultancy on Windows, Linux and VMware infrastructure, including automation, orchestration, design, implementation, migration and support. Experience of working in both the private and public sector within Managed Services, Retail, Defence, Home Affairs, Space, Local Government and the NHS.</description>
-    </item>
-    
-    <item>
-      <title>Terraform Modules</title>
-      <link>https://dtrac.github.io/terraform/terraform-modules/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dtrac.github.io/terraform/terraform-modules/</guid>
-      <description>Terraform Modules Author: Dan Tracey
-Last Updated: 07/03/2020
- Context This pattern describes the high level approach to creating Terraform Modules.
-A smooth process for this is absolutely key to enabling Continuous Delivery - a goal for all teams operating on JLDP. Adopting continuous delivery practices helps to ensure:
- Software is always deployable throughout its life Feedback is faster We are able to easily fix forward or rollback  Solution Pattern Docker itself provides a wrapper for container management operations - specifically commands to build, push and pull from a registry.</description>
+I’m a senior platform engineer with over 20 years’ experience in public and private cloud and software-defined datacenter consultancy on Windows, Linux and VMware infrastructure, including automation, orchestration, design, implementation, migration and support. Experience of working in both the private and public sector within Managed Services, Retail, Defence, Home Affairs, Space, Local Government and the NHS.</description>
     </item>
     
   </channel>

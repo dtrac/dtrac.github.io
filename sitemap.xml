@@ -1,56 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://dtrac.github.io/categories/azure/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/categories/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/categories/terraform/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/terraform/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/terraform/terraform-vs-arm-templates/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/terraform/error-features-required-field-is-not-set/</loc>
-    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://dtrac.github.io/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/azure/</loc>
-  </url>
-  
-  <url>
+    <lastmod>2023-03-04T16:36:47+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/categories/</loc>
+  </url><url>
     <loc>https://dtrac.github.io/tags/</loc>
+  </url><url>
+    <loc>https://dtrac.github.io/</loc>
   </url>
-  
-  <url>
-    <loc>https://dtrac.github.io/terraform/terraform-modules/</loc>
-  </url>
-  
 </urlset>
