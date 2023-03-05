@@ -3,6 +3,7 @@ theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "Welcome to Dan's Blog Site"
+publishDir = "docs"
 
 [params]
 author = "Dan Tracey"
@@ -21,7 +22,6 @@ colorScheme = "auto"
 hideColorSchemeToggle = false
 favicon_32 = "/images/favicon.png"
 enableEmoji = true
-
 
 [[params.social]]
 name = "Github"
