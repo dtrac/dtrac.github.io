@@ -2,8 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dtrac.github.io/tags/azure/</loc>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
+  </url><url>
     <loc>https://dtrac.github.io/categories/</loc>
-    <lastmod>2023-03-04T20:34:12+00:00</lastmod>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/categories/certification/</loc>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/tags/cybersecurity/</loc>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/posts/</loc>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/posts/sc-100-mindmap/</loc>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/tags/</loc>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/</loc>
+    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/tags/development/</loc>
     <lastmod>2023-03-04T20:34:12+00:00</lastmod>
@@ -14,12 +35,6 @@
     <loc>https://dtrac.github.io/tags/mermaid/</loc>
     <lastmod>2023-03-04T20:34:12+00:00</lastmod>
   </url><url>
-    <loc>https://dtrac.github.io/posts/</loc>
-    <lastmod>2023-03-04T20:34:12+00:00</lastmod>
-  </url><url>
-    <loc>https://dtrac.github.io/tags/</loc>
-    <lastmod>2023-03-04T20:34:12+00:00</lastmod>
-  </url><url>
     <loc>https://dtrac.github.io/posts/testing-mermaid-in-hugo/</loc>
     <lastmod>2023-03-04T20:34:12+00:00</lastmod>
   </url><url>
@@ -27,9 +42,6 @@
     <lastmod>2023-03-04T20:34:12+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/categories/web-development/</loc>
-    <lastmod>2023-03-04T20:34:12+00:00</lastmod>
-  </url><url>
-    <loc>https://dtrac.github.io/</loc>
     <lastmod>2023-03-04T20:34:12+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/about/</loc>
