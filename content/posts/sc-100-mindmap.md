@@ -4,9 +4,9 @@ date = 2023-03-05T21:23:13Z
 title = "sc-100 mindmap"
 description = ""
 slug = ""
-authors = []
-tags = ["azure", "cybersecurity"]
-categories = ["certification"]
+authors = ["dan"]
+tags = ["azure", "cybersecurity", "mermaid"]
+categories = ["azure", "certification"]
 externalLink = ""
 series = []
 +++

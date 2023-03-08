@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Welcome to Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 05 Mar 2023 21:23:13 +0000</lastBuildDate><atom:link href="https://dtrac.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Mar 2023 18:50:05 +0000</lastBuildDate><atom:link href="https://dtrac.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>resource graph queries with powershell (two ways!)</title>
+      <link>https://dtrac.github.io/posts/resource-graph-queries/</link>
+      <pubDate>Wed, 08 Mar 2023 18:50:05 +0000</pubDate>
+      
+      <guid>https://dtrac.github.io/posts/resource-graph-queries/</guid>
+      <description>Whilst looking at some intermittent Azure DevOps pipeline failures recently, a colleague of mine realized that we were being throttled by various Azure APIs, mainly due to how inefficiently our PowerShell scripts were written.
+You know the score, you need to enumerate a particular property from all of the storage accounts deployed within your tenant, so you end up quickly doing something along the lines of:
+foreach ($subscription in Get-AzSubscription) { &amp;lt;# $subscription is the current item #&amp;gt; foreach ($storageAccount in Get-AzStorageAccount) { &amp;lt;# $storageAccount is the current item #&amp;gt; $storageAccount.</description>
+    </item>
+    
     <item>
       <title>sc-100 mindmap</title>
       <link>https://dtrac.github.io/posts/sc-100-mindmap/</link>
