@@ -41,7 +41,7 @@ The same results as above can be returned with a simple resource graph query:
 How do I run this query (you ask)?  Well there are a few ways (Portal, REST API etc) - but my two favourite ways are:
 
 - Azure PowerShell (AZ) Module
-- Native PowerShell
+- Native PowerShell (If you want to avoid PowerShell module version dependency issues...)
 
 1) Azure PowerShell Module:
 

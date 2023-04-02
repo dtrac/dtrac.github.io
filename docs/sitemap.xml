@@ -3,19 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://dtrac.github.io/categories/administration/</loc>
-    <lastmod>2023-03-08T18:50:05+00:00</lastmod>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/tags/azure/</loc>
-    <lastmod>2023-03-08T18:50:05+00:00</lastmod>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/categories/azure/</loc>
-    <lastmod>2023-03-08T18:50:05+00:00</lastmod>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/categories/</loc>
-    <lastmod>2023-03-08T18:50:05+00:00</lastmod>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/tags/cybersecurity/</loc>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/posts/</loc>
-    <lastmod>2023-03-08T18:50:05+00:00</lastmod>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/posts/resource-graph-gotchas/</loc>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/tags/</loc>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
+  </url><url>
+    <loc>https://dtrac.github.io/</loc>
+    <lastmod>2023-03-30T19:00:05+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/tags/powershell/</loc>
     <lastmod>2023-03-08T18:50:05+00:00</lastmod>
@@ -23,16 +35,7 @@
     <loc>https://dtrac.github.io/posts/resource-graph-queries/</loc>
     <lastmod>2023-03-08T18:50:05+00:00</lastmod>
   </url><url>
-    <loc>https://dtrac.github.io/tags/</loc>
-    <lastmod>2023-03-08T18:50:05+00:00</lastmod>
-  </url><url>
-    <loc>https://dtrac.github.io/</loc>
-    <lastmod>2023-03-08T18:50:05+00:00</lastmod>
-  </url><url>
     <loc>https://dtrac.github.io/categories/certification/</loc>
-    <lastmod>2023-03-05T21:23:13+00:00</lastmod>
-  </url><url>
-    <loc>https://dtrac.github.io/tags/cybersecurity/</loc>
     <lastmod>2023-03-05T21:23:13+00:00</lastmod>
   </url><url>
     <loc>https://dtrac.github.io/tags/mermaid/</loc>
