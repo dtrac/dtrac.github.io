@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Welcome to Dan&#39;s Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Mar 2023 19:00:05 +0000</lastBuildDate><atom:link href="https://dtrac.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Sep 2023 15:09:26 +0100</lastBuildDate><atom:link href="https://dtrac.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>azure</title>
       <link>https://dtrac.github.io/tags/azure/</link>
-      <pubDate>Thu, 30 Mar 2023 19:00:05 +0000</pubDate>
+      <pubDate>Sun, 10 Sep 2023 15:09:26 +0100</pubDate>
       
       <guid>https://dtrac.github.io/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://dtrac.github.io/tags/terraform/</link>
+      <pubDate>Sun, 10 Sep 2023 15:09:26 +0100</pubDate>
+      
+      <guid>https://dtrac.github.io/tags/terraform/</guid>
       <description></description>
     </item>
     

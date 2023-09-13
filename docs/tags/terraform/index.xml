@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>terraform on Welcome to Dan&#39;s Blog Site</title>
+    <link>https://dtrac.github.io/tags/terraform/</link>
+    <description>Recent content in terraform on Welcome to Dan&#39;s Blog Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 10 Sep 2023 15:09:26 +0100</lastBuildDate><atom:link href="https://dtrac.github.io/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>terraform data types</title>
+      <link>https://dtrac.github.io/posts/terraform-data-types/</link>
+      <pubDate>Sun, 10 Sep 2023 15:09:26 +0100</pubDate>
+      
+      <guid>https://dtrac.github.io/posts/terraform-data-types/</guid>
+      <description>Brewing Success: Deploying Terraform&amp;rsquo;s Data Types for the Cloud Café in Azure Link to heading Introduction: Welcome to the grand opening of the Cloud Café, where the aroma of freshly brewed coffee masks the stench of poorly deployed Azure infrastructure. Today, we&amp;rsquo;re not just serving up skinny, double-vented caramel mocha-lattes; we&amp;rsquo;re crafting the infrastructure in the Cloud Cafe global datacenter using some of Terraform&amp;rsquo;s complex data types — lists, sets, and maps.</description>
+    </item>
+    
+  </channel>
+</rss>
