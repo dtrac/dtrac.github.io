@@ -1,6 +1,6 @@
 +++ 
 draft = false
-date = 2023-09-10T15:09:26+01:00
+date = 2023-04-20T19:00:05Z
 title = "terraform data types"
 description = ""
 slug = ""
